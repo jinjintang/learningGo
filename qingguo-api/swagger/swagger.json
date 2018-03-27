@@ -1,0 +1,4236 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/advertise/": {
+            "get": {
+                "tags": [
+                    "advertise"
+                ],
+                "description": "get Advertise",
+                "operationId": "AdvertiseController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Advertise"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "advertise"
+                ],
+                "description": "create Advertise",
+                "operationId": "AdvertiseController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Advertise content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Advertise"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Advertise"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/advertise/{id}": {
+            "get": {
+                "tags": [
+                    "advertise"
+                ],
+                "description": "get Advertise by id",
+                "operationId": "AdvertiseController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Advertise"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "advertise"
+                ],
+                "description": "update the Advertise",
+                "operationId": "AdvertiseController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Advertise content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Advertise"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Advertise"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "advertise"
+                ],
+                "description": "delete the Advertise",
+                "operationId": "AdvertiseController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/area/": {
+            "get": {
+                "tags": [
+                    "area"
+                ],
+                "description": "get Area",
+                "operationId": "AreaController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Area"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "area"
+                ],
+                "description": "create Area",
+                "operationId": "AreaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Area content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Area"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Area"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/area/{id}": {
+            "get": {
+                "tags": [
+                    "area"
+                ],
+                "description": "get Area by id",
+                "operationId": "AreaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Area"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "area"
+                ],
+                "description": "update the Area",
+                "operationId": "AreaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Area content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Area"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Area"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "area"
+                ],
+                "description": "delete the Area",
+                "operationId": "AreaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/attendance/": {
+            "get": {
+                "tags": [
+                    "attendance"
+                ],
+                "description": "get Attendance",
+                "operationId": "AttendanceController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Attendance"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "attendance"
+                ],
+                "description": "create Attendance",
+                "operationId": "AttendanceController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Attendance content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Attendance"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Attendance"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/attendance/{id}": {
+            "get": {
+                "tags": [
+                    "attendance"
+                ],
+                "description": "get Attendance by id",
+                "operationId": "AttendanceController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Attendance"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "attendance"
+                ],
+                "description": "update the Attendance",
+                "operationId": "AttendanceController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Attendance content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Attendance"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Attendance"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "attendance"
+                ],
+                "description": "delete the Attendance",
+                "operationId": "AttendanceController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/classs/": {
+            "get": {
+                "tags": [
+                    "classs"
+                ],
+                "description": "get Classs",
+                "operationId": "ClasssController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Classs"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "classs"
+                ],
+                "description": "create Classs",
+                "operationId": "ClasssController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Classs content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Classs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Classs"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/classs/{id}": {
+            "get": {
+                "tags": [
+                    "classs"
+                ],
+                "description": "get Classs by id",
+                "operationId": "ClasssController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Classs"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "classs"
+                ],
+                "description": "update the Classs",
+                "operationId": "ClasssController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Classs content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Classs"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Classs"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "classs"
+                ],
+                "description": "delete the Classs",
+                "operationId": "ClasssController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/course/": {
+            "get": {
+                "tags": [
+                    "course"
+                ],
+                "description": "get Course",
+                "operationId": "CourseController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Course"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "course"
+                ],
+                "description": "create Course",
+                "operationId": "CourseController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Course content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Course"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Course"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/course/{id}": {
+            "get": {
+                "tags": [
+                    "course"
+                ],
+                "description": "get Course by id",
+                "operationId": "CourseController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Course"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "course"
+                ],
+                "description": "update the Course",
+                "operationId": "CourseController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Course content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Course"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Course"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "course"
+                ],
+                "description": "delete the Course",
+                "operationId": "CourseController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/course_advertise/": {
+            "get": {
+                "tags": [
+                    "course_advertise"
+                ],
+                "description": "get CourseAdvertise",
+                "operationId": "CourseAdvertiseController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseAdvertise"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "course_advertise"
+                ],
+                "description": "create CourseAdvertise",
+                "operationId": "CourseAdvertiseController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CourseAdvertise content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseAdvertise"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.CourseAdvertise"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/course_advertise/{id}": {
+            "get": {
+                "tags": [
+                    "course_advertise"
+                ],
+                "description": "get CourseAdvertise by id",
+                "operationId": "CourseAdvertiseController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseAdvertise"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "course_advertise"
+                ],
+                "description": "update the CourseAdvertise",
+                "operationId": "CourseAdvertiseController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CourseAdvertise content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseAdvertise"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseAdvertise"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "course_advertise"
+                ],
+                "description": "delete the CourseAdvertise",
+                "operationId": "CourseAdvertiseController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/course_category/": {
+            "get": {
+                "tags": [
+                    "course_category"
+                ],
+                "description": "get CourseCategory",
+                "operationId": "CourseCategoryController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseCategory"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "course_category"
+                ],
+                "description": "create CourseCategory",
+                "operationId": "CourseCategoryController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CourseCategory content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseCategory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.CourseCategory"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/course_category/{id}": {
+            "get": {
+                "tags": [
+                    "course_category"
+                ],
+                "description": "get CourseCategory by id",
+                "operationId": "CourseCategoryController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseCategory"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "course_category"
+                ],
+                "description": "update the CourseCategory",
+                "operationId": "CourseCategoryController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CourseCategory content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseCategory"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseCategory"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "course_category"
+                ],
+                "description": "delete the CourseCategory",
+                "operationId": "CourseCategoryController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/course_rank/": {
+            "get": {
+                "tags": [
+                    "course_rank"
+                ],
+                "description": "get CourseRank",
+                "operationId": "CourseRankController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseRank"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "course_rank"
+                ],
+                "description": "create CourseRank",
+                "operationId": "CourseRankController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CourseRank content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseRank"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.CourseRank"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/course_rank/{id}": {
+            "get": {
+                "tags": [
+                    "course_rank"
+                ],
+                "description": "get CourseRank by id",
+                "operationId": "CourseRankController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseRank"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "course_rank"
+                ],
+                "description": "update the CourseRank",
+                "operationId": "CourseRankController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for CourseRank content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseRank"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CourseRank"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "course_rank"
+                ],
+                "description": "delete the CourseRank",
+                "operationId": "CourseRankController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/refund/": {
+            "get": {
+                "tags": [
+                    "refund"
+                ],
+                "description": "get Refund",
+                "operationId": "RefundController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "refund"
+                ],
+                "description": "create Refund",
+                "operationId": "RefundController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Refund content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Refund"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/refund/{id}": {
+            "get": {
+                "tags": [
+                    "refund"
+                ],
+                "description": "get Refund by id",
+                "operationId": "RefundController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "refund"
+                ],
+                "description": "update the Refund",
+                "operationId": "RefundController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Refund content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Refund"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "refund"
+                ],
+                "description": "delete the Refund",
+                "operationId": "RefundController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/role/": {
+            "get": {
+                "tags": [
+                    "role"
+                ],
+                "description": "get Role",
+                "operationId": "RoleController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Role"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "role"
+                ],
+                "description": "create Role",
+                "operationId": "RoleController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Role content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Role"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Role"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/role/{id}": {
+            "get": {
+                "tags": [
+                    "role"
+                ],
+                "description": "get Role by id",
+                "operationId": "RoleController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Role"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "role"
+                ],
+                "description": "update the Role",
+                "operationId": "RoleController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Role content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Role"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Role"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "role"
+                ],
+                "description": "delete the Role",
+                "operationId": "RoleController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/student/": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "get Student",
+                "operationId": "StudentController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Student"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "student"
+                ],
+                "description": "create Student",
+                "operationId": "StudentController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Student content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Student"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Student"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/student/{id}": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "get Student by id",
+                "operationId": "StudentController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Student"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "student"
+                ],
+                "description": "update the Student",
+                "operationId": "StudentController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Student content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Student"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Student"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "student"
+                ],
+                "description": "delete the Student",
+                "operationId": "StudentController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/suser/": {
+            "get": {
+                "tags": [
+                    "suser"
+                ],
+                "description": "get Suser",
+                "operationId": "SuserController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Suser"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "suser"
+                ],
+                "description": "create Suser",
+                "operationId": "SuserController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Suser content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Suser"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Suser"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/suser/{id}": {
+            "get": {
+                "tags": [
+                    "suser"
+                ],
+                "description": "get Suser by id",
+                "operationId": "SuserController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Suser"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "suser"
+                ],
+                "description": "update the Suser",
+                "operationId": "SuserController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Suser content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Suser"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Suser"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "suser"
+                ],
+                "description": "delete the Suser",
+                "operationId": "SuserController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/teacher_course/": {
+            "get": {
+                "tags": [
+                    "teacher_course"
+                ],
+                "description": "get TeacherCourse",
+                "operationId": "TeacherCourseController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TeacherCourse"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "teacher_course"
+                ],
+                "description": "create TeacherCourse",
+                "operationId": "TeacherCourseController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TeacherCourse content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TeacherCourse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.TeacherCourse"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/teacher_course/{id}": {
+            "get": {
+                "tags": [
+                    "teacher_course"
+                ],
+                "description": "get TeacherCourse by id",
+                "operationId": "TeacherCourseController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TeacherCourse"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "teacher_course"
+                ],
+                "description": "update the TeacherCourse",
+                "operationId": "TeacherCourseController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TeacherCourse content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TeacherCourse"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TeacherCourse"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "teacher_course"
+                ],
+                "description": "delete the TeacherCourse",
+                "operationId": "TeacherCourseController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/trade/": {
+            "get": {
+                "tags": [
+                    "trade"
+                ],
+                "description": "get Trade",
+                "operationId": "TradeController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Trade"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "trade"
+                ],
+                "description": "create Trade",
+                "operationId": "TradeController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Trade content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Trade"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Trade"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/trade/{id}": {
+            "get": {
+                "tags": [
+                    "trade"
+                ],
+                "description": "get Trade by id",
+                "operationId": "TradeController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Trade"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "trade"
+                ],
+                "description": "update the Trade",
+                "operationId": "TradeController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Trade content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Trade"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Trade"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "trade"
+                ],
+                "description": "delete the Trade",
+                "operationId": "TradeController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/trade_detail/": {
+            "get": {
+                "tags": [
+                    "trade_detail"
+                ],
+                "description": "get TradeDetail",
+                "operationId": "TradeDetailController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TradeDetail"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "trade_detail"
+                ],
+                "description": "create TradeDetail",
+                "operationId": "TradeDetailController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TradeDetail content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TradeDetail"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.TradeDetail"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/trade_detail/{id}": {
+            "get": {
+                "tags": [
+                    "trade_detail"
+                ],
+                "description": "get TradeDetail by id",
+                "operationId": "TradeDetailController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TradeDetail"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "trade_detail"
+                ],
+                "description": "update the TradeDetail",
+                "operationId": "TradeDetailController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for TradeDetail content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.TradeDetail"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.TradeDetail"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "trade_detail"
+                ],
+                "description": "delete the TradeDetail",
+                "operationId": "TradeDetailController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/transfer/": {
+            "get": {
+                "tags": [
+                    "transfer"
+                ],
+                "description": "get Transfer",
+                "operationId": "TransferController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Transfer"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "transfer"
+                ],
+                "description": "create Transfer",
+                "operationId": "TransferController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Transfer content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Transfer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Transfer"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/transfer/{id}": {
+            "get": {
+                "tags": [
+                    "transfer"
+                ],
+                "description": "get Transfer by id",
+                "operationId": "TransferController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Transfer"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "transfer"
+                ],
+                "description": "update the Transfer",
+                "operationId": "TransferController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Transfer content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Transfer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Transfer"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "transfer"
+                ],
+                "description": "delete the Transfer",
+                "operationId": "TransferController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/user_role/": {
+            "get": {
+                "tags": [
+                    "user_role"
+                ],
+                "description": "get UserRole",
+                "operationId": "UserRoleController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.UserRole"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "user_role"
+                ],
+                "description": "create UserRole",
+                "operationId": "UserRoleController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for UserRole content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UserRole"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.UserRole"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/user_role/{id}": {
+            "get": {
+                "tags": [
+                    "user_role"
+                ],
+                "description": "get UserRole by id",
+                "operationId": "UserRoleController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.UserRole"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "user_role"
+                ],
+                "description": "update the UserRole",
+                "operationId": "UserRoleController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for UserRole content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.UserRole"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.UserRole"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "user_role"
+                ],
+                "description": "delete the UserRole",
+                "operationId": "UserRoleController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        },
+        "/withdraw/": {
+            "get": {
+                "tags": [
+                    "withdraw"
+                ],
+                "description": "get Withdraw",
+                "operationId": "WithdrawController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Withdraw"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "withdraw"
+                ],
+                "description": "create Withdraw",
+                "operationId": "WithdrawController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Withdraw content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Withdraw"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Withdraw"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/withdraw/{id}": {
+            "get": {
+                "tags": [
+                    "withdraw"
+                ],
+                "description": "get Withdraw by id",
+                "operationId": "WithdrawController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Withdraw"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "withdraw"
+                ],
+                "description": "update the Withdraw",
+                "operationId": "WithdrawController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Withdraw content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Withdraw"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Withdraw"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is not int"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "withdraw"
+                ],
+                "description": "delete the Withdraw",
+                "operationId": "WithdrawController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "id is empty"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Advertise": {
+            "title": "Advertise",
+            "type": "object",
+            "properties": {
+                "ADCATEGORY": {
+                    "description": "0内部课程1外部2商品",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ADSTATE": {
+                    "description": "0草稿1提交2分部已审核3总部已审核4停用",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ADVERTISECONTENT": {
+                    "description": "广告标题",
+                    "type": "string"
+                },
+                "ADVERTISECOVER": {
+                    "description": "广告图片",
+                    "type": "string"
+                },
+                "ADVERTISEURL": {
+                    "description": "链接",
+                    "type": "string"
+                },
+                "AREAID": {
+                    "description": "区域主键",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "FCHECKOPENID": {
+                    "description": "分部审核人openid(冗余)",
+                    "type": "string"
+                },
+                "FCHECKTIME": {
+                    "description": "分部审核时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "FCHECKUSERID": {
+                    "description": "分部审核人id",
+                    "type": "string"
+                },
+                "FCHECKUSERNAME": {
+                    "description": "分部审核人姓名(冗余)",
+                    "type": "string"
+                },
+                "ISMAIN": {
+                    "description": "0不显示首页1显示首页",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PRICE": {
+                    "description": "单价",
+                    "type": "number",
+                    "format": "double"
+                },
+                "RELEASENAME": {
+                    "description": "发布用户姓名",
+                    "type": "string"
+                },
+                "RELEASEOPENID": {
+                    "description": "发布用户OPENID",
+                    "type": "string"
+                },
+                "RELEASETIME": {
+                    "description": "发布时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "RELEASEUSERID": {
+                    "description": "发布用户id",
+                    "type": "string"
+                },
+                "ZCHECKOPENID": {
+                    "description": "总部审核人openid",
+                    "type": "string"
+                },
+                "ZCHECKTIME": {
+                    "description": "总部审核时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "ZCHECKUSERID": {
+                    "description": "总部审核人id",
+                    "type": "string"
+                },
+                "ZCHECKUSERNAME": {
+                    "description": "总部审核人姓名",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Area": {
+            "title": "Area",
+            "type": "object",
+            "properties": {
+                "AREACODE": {
+                    "type": "string"
+                },
+                "AREALEVEL": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "AREAREMARK": {
+                    "description": "备注",
+                    "type": "string"
+                },
+                "AREASTATE": {
+                    "description": "0表示停用1表示启用",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PARENTID": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PARENTNAME": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Attendance": {
+            "title": "Attendance",
+            "type": "object",
+            "properties": {
+                "CLASSID": {
+                    "description": "班级id",
+                    "type": "string"
+                },
+                "CLASSNAME": {
+                    "description": "班级名称",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SAOCODETIME": {
+                    "description": "扫码时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "USERID": {
+                    "description": "用户ID",
+                    "type": "string"
+                },
+                "USERNAME": {
+                    "description": "用户名",
+                    "type": "string"
+                },
+                "USEROPENID": {
+                    "description": "用户OPENID",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Classs": {
+            "title": "Classs",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "区域ID",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "CLASSADDRESS": {
+                    "description": "上课地点",
+                    "type": "string"
+                },
+                "CLASSCISHU": {
+                    "description": "次数",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CLASSMONITOR": {
+                    "description": "班长",
+                    "type": "string"
+                },
+                "CLASSNAME": {
+                    "description": "班级名字",
+                    "type": "string"
+                },
+                "CLASSNUMBER": {
+                    "description": "班级人数",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CLASSSSTATE": {
+                    "description": "班级状态0表示上课中1表示已结课2待审查",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CLASSTIME": {
+                    "description": "上课时间",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TEACHERID": {
+                    "description": "老师编号",
+                    "type": "string"
+                },
+                "TEACHERNAME": {
+                    "description": "老师姓名",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Course": {
+            "title": "Course",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "区域ID",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称（冗余）",
+                    "type": "string"
+                },
+                "CATEGORYID": {
+                    "description": "类别主键",
+                    "type": "string"
+                },
+                "CATEGORYNAME": {
+                    "description": "类别名称（冗余）",
+                    "type": "string"
+                },
+                "COURSEABSTRACT": {
+                    "description": "课程摘要",
+                    "type": "string"
+                },
+                "COURSECONTENT": {
+                    "description": "课程内容",
+                    "type": "string"
+                },
+                "COURSECOVER": {
+                    "description": "课程首页展示图片路径",
+                    "type": "string"
+                },
+                "COURSENAME": {
+                    "description": "课程名",
+                    "type": "string"
+                },
+                "COURSEPRICE": {
+                    "description": "课程单价",
+                    "type": "number",
+                    "format": "double"
+                },
+                "COURSEREMARK": {
+                    "description": "课程备注",
+                    "type": "string"
+                },
+                "FCHECKOPENID": {
+                    "description": "分部审核人openid(冗余)",
+                    "type": "string"
+                },
+                "FCHECKTIME": {
+                    "description": "分部审核时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "FCHECKUSERID": {
+                    "description": "分部审核人id",
+                    "type": "string"
+                },
+                "FCHECKUSERNAME": {
+                    "description": "分部审核人姓名(冗余)",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "OPENNUMBER": {
+                    "description": "开课需要人数",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "RANKID": {
+                    "description": "等级主键",
+                    "type": "string"
+                },
+                "RANKNAME": {
+                    "description": "等级名称(冗余)",
+                    "type": "string"
+                },
+                "RECOMMEND": {
+                    "description": "是否是精华",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "RELEASENAME": {
+                    "description": "发布用户姓名(冗余)",
+                    "type": "string"
+                },
+                "RELEASEOPENID": {
+                    "description": "发布用户OPENID(冗余)",
+                    "type": "string"
+                },
+                "RELEASETIME": {
+                    "description": "发布时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "RELEASEUSERID": {
+                    "description": "发布用户ID",
+                    "type": "string"
+                },
+                "SORTNUM": {
+                    "description": "排序号",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "STATE": {
+                    "description": "0草稿1提交2分部已审核3总部已审核4停用",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ZCHECKOPENID": {
+                    "description": "总部审核人openid",
+                    "type": "string"
+                },
+                "ZCHECKTIME": {
+                    "description": "总部审核时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "ZCHECKUSERID": {
+                    "description": "总部审核人id",
+                    "type": "string"
+                },
+                "ZCHECKUSERNAME": {
+                    "description": "总部审核人姓名",
+                    "type": "string"
+                }
+            }
+        },
+        "models.CourseAdvertise": {
+            "title": "CourseAdvertise",
+            "type": "object",
+            "properties": {
+                "ADVERTISEID": {
+                    "description": "广告id",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "COURSEID": {
+                    "description": "课程id",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "REMARK": {
+                    "description": "备注",
+                    "type": "string"
+                },
+                "STATE": {
+                    "description": "0开启1停用",
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.CourseCategory": {
+            "title": "CourseCategory",
+            "type": "object",
+            "properties": {
+                "CATEGORYNAME": {
+                    "description": "类别名称(801)",
+                    "type": "string"
+                },
+                "CATEGORYREMARK": {
+                    "description": "备注",
+                    "type": "string"
+                },
+                "CATEGORYSORT": {
+                    "description": "排序数",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CATEGORYSTATE": {
+                    "description": "0表示停用1表示启用",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "description": "类别主键",
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.CourseRank": {
+            "title": "CourseRank",
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "RANKNAME": {
+                    "description": "等级名称(初级)",
+                    "type": "string"
+                },
+                "RANKREMARK": {
+                    "description": "备注",
+                    "type": "string"
+                },
+                "RANKSTATE": {
+                    "description": "0表示停用1表示启用",
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Refund": {
+            "title": "Refund",
+            "type": "object",
+            "properties": {
+                "APPLYTIME": {
+                    "description": "申请时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "AREAID": {
+                    "description": "区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "DEALTIME": {
+                    "description": "处理时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "DEALUSERID": {
+                    "description": "处理人ID",
+                    "type": "string"
+                },
+                "DEALUSERNAME": {
+                    "description": "处理人姓名",
+                    "type": "string"
+                },
+                "DEALUSEROPENID": {
+                    "description": "处理人OPENID",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "MONEY": {
+                    "description": "退款金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "REFUNDREASON": {
+                    "description": "退款理由",
+                    "type": "string"
+                },
+                "REFUNDUSERID": {
+                    "description": "申请退款用户id",
+                    "type": "string"
+                },
+                "REFUNDUSERNAME": {
+                    "description": "申请退款用户姓名",
+                    "type": "string"
+                },
+                "REFUNDUSEROPENID": {
+                    "description": "申请退款用户OPENID",
+                    "type": "string"
+                },
+                "STATE": {
+                    "description": "0待退款1已审核2驳回",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TRADEDETAILID": {
+                    "description": "交易详情ID",
+                    "type": "string"
+                },
+                "TRADEID": {
+                    "description": "交易订单ID",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Role": {
+            "title": "Role",
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ROLENAME": {
+                    "description": "角色名称(初级)",
+                    "type": "string"
+                },
+                "ROLEREMARK": {
+                    "description": "备注",
+                    "type": "string"
+                },
+                "ROLESTATE": {
+                    "description": "0表示停用1表示启用",
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Student": {
+            "title": "Student",
+            "type": "object",
+            "properties": {
+                "ADRESS": {
+                    "description": "地址",
+                    "type": "string"
+                },
+                "AREAID": {
+                    "description": "所属区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "AVAILABLEASSETS": {
+                    "description": "可用资产",
+                    "type": "number",
+                    "format": "double"
+                },
+                "COMPANY": {
+                    "description": "公司",
+                    "type": "string"
+                },
+                "EMAIL": {
+                    "description": "邮箱",
+                    "type": "string"
+                },
+                "FROZENASSETS": {
+                    "description": "冻结资产",
+                    "type": "number",
+                    "format": "double"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "LIKES": {
+                    "description": "爱好",
+                    "type": "string"
+                },
+                "MARRYD": {
+                    "description": "0未婚1已婚",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PHONENUMBER": {
+                    "description": "电话",
+                    "type": "string"
+                },
+                "PHOTOPATH": {
+                    "description": "相片路径",
+                    "type": "string"
+                },
+                "SEX": {
+                    "description": "0男1女",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SHENFEN": {
+                    "description": "身份证",
+                    "type": "string"
+                },
+                "STATE": {
+                    "description": "状态0老师待激活1学员2分部老师3激活",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "USERNAME": {
+                    "description": "姓名",
+                    "type": "string"
+                },
+                "USEROPENID": {
+                    "description": "openid",
+                    "type": "string"
+                },
+                "WEIXIN": {
+                    "description": "微信",
+                    "type": "string"
+                },
+                "XIANJIN": {
+                    "description": "现金",
+                    "type": "number",
+                    "format": "double"
+                },
+                "ZISHU": {
+                    "description": "申请者自述",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Suser": {
+            "title": "Suser",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "所属区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "所属区域",
+                    "type": "string"
+                },
+                "EMAIL": {
+                    "description": "邮箱",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "NAME": {
+                    "description": "姓名",
+                    "type": "string"
+                },
+                "OPENID": {
+                    "description": "openid",
+                    "type": "string"
+                },
+                "PASSWORD": {
+                    "description": "密码",
+                    "type": "string"
+                },
+                "PHONENUMBER": {
+                    "description": "电话",
+                    "type": "string"
+                },
+                "PHOTOPATH": {
+                    "description": "头像路径",
+                    "type": "string"
+                },
+                "SEX": {
+                    "description": "0男1女",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "STATE": {
+                    "description": "状态",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "WEIXIN": {
+                    "description": "微信",
+                    "type": "string"
+                }
+            }
+        },
+        "models.TeacherCourse": {
+            "title": "TeacherCourse",
+            "type": "object",
+            "properties": {
+                "COURSEID": {
+                    "description": "课程名",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "COURSENAME": {
+                    "description": "课程编号",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TEACHERID": {
+                    "description": "教师编号",
+                    "type": "string"
+                },
+                "TEACHERNAME": {
+                    "description": "教师姓名",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Trade": {
+            "title": "Trade",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "BANKTYPE": {
+                    "description": "银行缩写",
+                    "type": "string"
+                },
+                "CASHFEE": {
+                    "description": "现金支付金额，除去红包什么的",
+                    "type": "number",
+                    "format": "double"
+                },
+                "CATEGORY": {
+                    "description": "0表示购买课程1充值2购买商品",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "COUNTMONEY": {
+                    "description": "使用账户付款金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "DEVICEINFO": {
+                    "description": "支付设备信息，手机，网页等",
+                    "type": "string"
+                },
+                "FEETYPE": {
+                    "description": "支付币种",
+                    "type": "string"
+                },
+                "FMONEY": {
+                    "description": "最终付款金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "NAME": {
+                    "description": "课程名称",
+                    "type": "string"
+                },
+                "OUTTRADENO": {
+                    "description": "内部交易订单号，\u003c=32",
+                    "type": "string"
+                },
+                "PAYTIME": {
+                    "description": "付款时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "PAYUSERID": {
+                    "description": "付款用户id",
+                    "type": "string"
+                },
+                "PAYUSERNAME": {
+                    "description": "付款用户姓名",
+                    "type": "string"
+                },
+                "PAYUSEROPENID": {
+                    "description": "付款用户openid",
+                    "type": "string"
+                },
+                "STATE": {
+                    "description": "0已支付1申请退款2驳回3部分退款4已退款5已完成不可更改6子订单已开班",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TIMEEND": {
+                    "description": "支付订单完成时间",
+                    "type": "string"
+                },
+                "TOTALFEE": {
+                    "description": "最初总金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "TRADETYPE": {
+                    "description": "支付方式，公众号，银行卡支付",
+                    "type": "string"
+                },
+                "TRANSACTIONID": {
+                    "description": "微信交易订单号",
+                    "type": "string"
+                },
+                "WEIXINMONEY": {
+                    "description": "微信付款金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "XIANJINPAY": {
+                    "description": "现金流支付",
+                    "type": "number",
+                    "format": "double"
+                }
+            }
+        },
+        "models.TradeDetail": {
+            "title": "TradeDetail",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域主键",
+                    "type": "string"
+                },
+                "CLASSID": {
+                    "description": "班级ID",
+                    "type": "string"
+                },
+                "CLASSPRICE": {
+                    "description": "课程单价",
+                    "type": "number",
+                    "format": "double"
+                },
+                "CLASSSTATE": {
+                    "description": "0待开班1已开班",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "COURSECOVER": {
+                    "description": "课程封面",
+                    "type": "string"
+                },
+                "COURSEID": {
+                    "description": "课程id",
+                    "type": "string"
+                },
+                "COURSENAME": {
+                    "description": "课程名",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TRADEID": {
+                    "description": "交易主键",
+                    "type": "string"
+                },
+                "TRADESTATE": {
+                    "description": "0已支付1申请退款2驳回3已退款4已完成（用户已确认）",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "USERID": {
+                    "description": "上课用户ID",
+                    "type": "string"
+                },
+                "USERNAME": {
+                    "description": "上课用户姓名",
+                    "type": "string"
+                },
+                "USERPHONE": {
+                    "description": "电话",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Transfer": {
+            "title": "Transfer",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TRANSFERCASH": {
+                    "description": "实际到账金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "TRANSFERCOMMISSION": {
+                    "description": "交易手续费",
+                    "type": "number",
+                    "format": "double"
+                },
+                "TRANSFERMONEY": {
+                    "description": "交易金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "TRANSFERTIME": {
+                    "description": "申请时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "TRANSFERUSERID": {
+                    "description": "转账用户id",
+                    "type": "string"
+                },
+                "TRANSFERUSERNAME": {
+                    "description": "转账用户姓名",
+                    "type": "string"
+                },
+                "TRANSFERUSEROPENID": {
+                    "description": "转账用户OPENID",
+                    "type": "string"
+                }
+            }
+        },
+        "models.UserRole": {
+            "title": "UserRole",
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SROLEID": {
+                    "description": "角色ID",
+                    "type": "string"
+                },
+                "SROLENAME": {
+                    "description": "角色名（冗余）",
+                    "type": "string"
+                },
+                "SUSERID": {
+                    "description": "系统用户ID",
+                    "type": "string"
+                }
+            }
+        },
+        "models.Withdraw": {
+            "title": "Withdraw",
+            "type": "object",
+            "properties": {
+                "AREAID": {
+                    "description": "区域id",
+                    "type": "string"
+                },
+                "AREANAME": {
+                    "description": "区域名称",
+                    "type": "string"
+                },
+                "DEALTIME": {
+                    "description": "处理时间",
+                    "type": "string",
+                    "format": "string"
+                },
+                "DEALUSERID": {
+                    "description": "处理人ID",
+                    "type": "string"
+                },
+                "DEALUSERNAME": {
+                    "description": "处理人姓名",
+                    "type": "string"
+                },
+                "DEALUSEROPENID": {
+                    "description": "处理人OPENID",
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "MONEY": {
+                    "description": "提现金额",
+                    "type": "number",
+                    "format": "double"
+                },
+                "PAYMENTNO": {
+                    "description": "微信订单号",
+                    "type": "string"
+                },
+                "PAYMENTTIME": {
+                    "description": "支付订单完成时间",
+                    "type": "string"
+                },
+                "STATE": {
+                    "description": "0表示申请中1分部审核通过2表示总部审核通过",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "USERID": {
+                    "description": "用户id",
+                    "type": "string"
+                },
+                "USERNAME": {
+                    "description": "姓名",
+                    "type": "string"
+                },
+                "USEROPENID": {
+                    "description": "openid",
+                    "type": "string"
+                },
+                "WITHDRAWTIME": {
+                    "description": "提现时间",
+                    "type": "string",
+                    "format": "string"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "advertise",
+            "description": "AdvertiseController operations for Advertise\n"
+        },
+        {
+            "name": "area",
+            "description": "AreaController operations for Area\n"
+        },
+        {
+            "name": "attendance",
+            "description": "AttendanceController operations for Attendance\n"
+        },
+        {
+            "name": "classs",
+            "description": "ClasssController operations for Classs\n"
+        },
+        {
+            "name": "course",
+            "description": "CourseController operations for Course\n"
+        },
+        {
+            "name": "course_advertise",
+            "description": "CourseAdvertiseController operations for CourseAdvertise\n"
+        },
+        {
+            "name": "course_category",
+            "description": "CourseCategoryController operations for CourseCategory\n"
+        },
+        {
+            "name": "course_rank",
+            "description": "CourseRankController operations for CourseRank\n"
+        },
+        {
+            "name": "refund",
+            "description": "RefundController operations for Refund\n"
+        },
+        {
+            "name": "role",
+            "description": "RoleController operations for Role\n"
+        },
+        {
+            "name": "student",
+            "description": "StudentController operations for Student\n"
+        },
+        {
+            "name": "suser",
+            "description": "SuserController operations for Suser\n"
+        },
+        {
+            "name": "teacher_course",
+            "description": "TeacherCourseController operations for TeacherCourse\n"
+        },
+        {
+            "name": "trade",
+            "description": "TradeController operations for Trade\n"
+        },
+        {
+            "name": "trade_detail",
+            "description": "TradeDetailController operations for TradeDetail\n"
+        },
+        {
+            "name": "transfer",
+            "description": "TransferController operations for Transfer\n"
+        },
+        {
+            "name": "user_role",
+            "description": "UserRoleController operations for UserRole\n"
+        },
+        {
+            "name": "withdraw",
+            "description": "WithdrawController operations for Withdraw\n"
+        }
+    ]
+}
